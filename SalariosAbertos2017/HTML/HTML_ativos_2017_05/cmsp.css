@@ -1,0 +1,198 @@
+﻿/**********************************************************************
+
+CLASSES GERAIS
+
+*/
+
+*
+{
+    font-family: "myriad-pro", "Helvetica Neue", Helvetica, Arial; color: #333333;
+}
+
+a
+{
+color: #B70704;
+}
+
+#titulo_da_pagina
+{
+    font-size: 110%;
+    width: 90%;
+}
+
+table
+{
+    font-size: 80%;
+    text-align: left;
+    border: 0px none black;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 95%; /*table-layout: fixed;*/
+}
+
+table td
+{
+    border: 1px solid black;
+    border-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+table th
+{
+    border: 1px solid black;
+    text-align: left;
+    padding: .6em .3em .3em .3em;
+}
+
+.cabecalho
+{
+    background-color: Silver;
+}
+
+.centralizado
+{
+    text-align: center;
+}
+
+.p
+{
+    font-size: .8em;
+}
+/**********************************************************************
+
+TODOS.HTML
+
+*/
+
+.lin_lotacao
+{
+}
+
+.nome_cabecalho
+{
+    width: 15em;
+}
+
+.cargo_cabecalho
+{
+    /*width: 15em;*/
+}
+
+.funcao_cabecalho
+{
+    /*width: 10em;*/
+}
+
+.remun_cabecalho
+{
+    /*width: 20em;*/
+    text-align: right;
+}
+
+.nome_valor
+{
+    padding: .3em;
+}
+
+.cargo_valor
+{
+    padding: .3em;
+}
+
+.funcao_valor
+{
+    padding: .3em;
+}
+
+.remun_valor
+{
+}
+
+.tabela_remun_liq
+{
+    border: 0px none Black;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tabela_remun_liq td
+{
+    border: 0px none Black;
+    border-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    height: 100%;
+}
+
+.tabela_remun_liq_tr_cima
+{
+    border-bottom: 1px dotted Black;
+}
+
+.remun_esq
+{
+    /*width: 12em;*/
+}
+
+.remun_dir
+{
+    width: 7em;
+    font-size: 115%;
+    padding: .3em;
+}
+
+.remun_unica
+{
+    border: 0px none Black;
+    font-size: 115%;
+    padding: .3em;
+}
+
+.obs_todos
+{
+    font-size: 70%;
+    font-style: italic;
+    padding: .3em;
+}
+
+/**********************************************************************
+
+DETALHES.HTML
+
+*/
+
+#tbl_detalhes td
+{
+    padding: .3em;
+}
+
+.cabecalho_parcelas
+{
+    text-align: center;
+}
+
+.canto_esquerdo_superior
+{
+    background-color: transparent;
+    border-top-style: none;
+    border-left-style: none;
+}
+
+.moeda
+{
+    text-align: right;
+}
+
+.tempo_servico
+{
+    text-align: center;
+}
