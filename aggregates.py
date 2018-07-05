@@ -1,7 +1,7 @@
 aggregates = {}
 
 for i in range(1,3):
-    with open('output_values_month_{}.txt'.format(i)) as f:
+    with open('outputs/output_values_month_{}.txt'.format(i)) as f:
         read_data = f.read()
         by_line = read_data.split('\n')
         for line in by_line:

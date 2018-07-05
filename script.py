@@ -1,6 +1,6 @@
 MONTH = 1
 
-with open('input_month_{}.txt'.format(MONTH)) as f:
+with open('inputs/input_month_{}.txt'.format(MONTH)) as f:
      read_data = f.read()
 
 by_line = read_data.split('\n')
@@ -31,14 +31,6 @@ for i in range(len(by_line)-1, 0, -1):
     elif by_line[i][:2] == 'R$':
         by_line[i-1] += by_line[i]
         del by_line[i]
-
-# with open('output.txt', 'w') as f:
-#     for line in by_line:
-#         f.write(line + '\n')
-
-# with open('output.txt') as f:
-#     read_data = f.read()
-# by_line = read_data.split('\n')
 
 results = {}
 current = None
@@ -75,6 +67,6 @@ for i in range(len(by_line)):
                            .replace('.', '')\
                            .replace(',', '.'))
 
-with open('output_values_month_{}.txt'.format(MONTH), 'w') as f:
+with open('outputs/output_values_month_{}.txt'.format(MONTH), 'w') as f:
     for key, value in results.items():
         f.write(key + '\t' +  str(value) + '\n')
