@@ -1,3 +1,0 @@
-conferir linhas do output por mes
-cruzar com dados ja calculados
-
