@@ -46,8 +46,11 @@ def output_results(month, results):
         for key, value in results.items():
             f.write(key + '\t' +  str(value) + '\n')
 
-if __name__ == '__main__':
+def main():
     for month in range(1,13):
         soup = read_html_for_month(month)
         results = get_values_from_soup(soup)
         output_results(month, results)
+
+if __name__ == '__main__':
+    main()
