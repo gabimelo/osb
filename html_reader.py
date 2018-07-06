@@ -42,7 +42,7 @@ def get_values_from_soup(soup):
     return results
 
 def output_results(month, results):
-    with open('outputs/output_values_month_{}.txt'.format(month), 'w') as f:
+    with open('outputs/by_month/output_values_month_{}.txt'.format(month), 'w') as f:
         for key, value in results.items():
             f.write(key + '\t' +  str(value) + '\n')
 
