@@ -28,7 +28,11 @@ def get_values_from_soup(soup):
             unique_income_tab = net_income_tab.find(class_='remun_unica')
             right_income_tab = net_income_tab.find_all(class_='remun_dir')
             if unique_income_tab is not None:
-                value = unique_income_tab.getText().strip()
+                a_tab = unique_income_tab.find('a')
+                if a_tab is not None:
+                    value = a_tab.getText().strip()
+                else:
+                    value = unique_income_tab.getText().strip()
             elif right_income_tab is not None:
                 value = right_income_tab[-1].getText().strip()
             # TODO check for corner cases
