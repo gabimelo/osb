@@ -1,3 +1,5 @@
-Calculador de salários da câmara dos vereadores de São Paulo, extraindo os valores a partir de arquivos HTML, e computando o valor total ao ano.
+Calculador de salários da Câmara de Vereadores de São Paulo, extraindo os valores a partir de arquivos HTML, e computando o valor gasto total ao ano, por setor.
 
-Python 3.6.5 :: Anaconda, Inc., using anaconda base env
+---
+
+Python 3.6.5, using Anaconda base env and bs4 library version 4.6.0.
