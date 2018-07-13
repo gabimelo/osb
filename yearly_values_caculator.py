@@ -1,5 +1,6 @@
 import math
 
+
 def get_aggregates(month, aggregates):
     with open('outputs/by_month/output_values_month_{}.txt'.format(month)) as f:
         read_data = f.read()
@@ -15,6 +16,7 @@ def get_aggregates(month, aggregates):
 
     return aggregates
 
+
 def output_aggregates(aggregates):
     import locale
     locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
@@ -24,14 +26,16 @@ def output_aggregates(aggregates):
                 negative = '-'
             else:
                 negative = ''
-            f.write(key + u'\t {}R$'.format(negative) +\
+            f.write(key + u'\t {}R$'.format(negative) +
                     locale.format('%.2f', math.fabs(value), 1) + '\n')
+
 
 def main():
     aggregates = {}
     for month in range(1, 13):
         aggregates = get_aggregates(month, aggregates)
     output_aggregates(aggregates)
+
 
 if __name__ == '__main__':
     main()

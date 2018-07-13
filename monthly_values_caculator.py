@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 
+
 def read_html_for_month(month):
     month = str(month)
     if len(month) == 1:
@@ -10,11 +11,13 @@ def read_html_for_month(month):
 
     return soup
 
+
 def get_values_from_soup(soup):
     rows = soup.find_all('tr')
 
     results = {}
     current = None
+    total = 0
 
     for row in rows:
         current_tab = row.find(class_='cabecalho')
@@ -45,16 +48,19 @@ def get_values_from_soup(soup):
 
     return results
 
+
 def output_results(month, results):
     with open('outputs/by_month/output_values_month_{}.txt'.format(month), 'w') as f:
         for key, value in results.items():
-            f.write(key + '\t' +  str(value) + '\n')
+            f.write(key + '\t' + str(value) + '\n')
+
 
 def main():
-    for month in range(1,13):
+    for month in range(1, 13):
         soup = read_html_for_month(month)
         results = get_values_from_soup(soup)
         output_results(month, results)
+
 
 if __name__ == '__main__':
     main()
