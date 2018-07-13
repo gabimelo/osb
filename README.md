@@ -16,13 +16,9 @@ TODO:
     - [ ] tipos de cargos existentes
     - [ ] media e variacao de salario por cargos, etc. 
     - [ ] Ver como os cargos mudaram mês a mês
-- [ ] relembrar como estão estruturadas linhas com "ausência de divulgação em razão de determinação judicial"
+- [x] relembrar como estão estruturadas linhas com "ausência de divulgação em razão de determinação judicial"
 - [ ] o que é o campo de função?
 - [ ] pq tem salários negativos?
 - [ ] missing values em matriculas?
 - [ ] map matriculas to vereadores
 - [ ] passar esses TODOs para issues.
-
-
-
-
