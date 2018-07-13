@@ -17,13 +17,16 @@ def read_html_for_month(month):
 def get_income(net_income_tab):
     unique_income_tab = net_income_tab.find(class_='remun_unica')
     right_income_tab = net_income_tab.find_all(class_='remun_dir')
+    value = None
     if unique_income_tab is not None:
         a_tab = unique_income_tab.find('a')
         if a_tab is not None:
             value = a_tab.getText().strip()
         else:
             value = unique_income_tab.getText().strip()
-    elif right_income_tab is not None:
+        if value[:8] == u'ausência':
+            value = None
+    if right_income_tab is not None and value is None:
         value = right_income_tab[-1].getText().strip()
     # TODO check for corner cases
     if value[:2] == u'R$':
@@ -45,16 +48,16 @@ def get_structured_data_from_soup(soup, month):
         section_tab = row.find(class_='cabecalho')
         net_income_tab = row.find(class_='tabela_remun_liq')
         if section_tab is not None:
-            if section is not None:
-                results.append([section, nome_valor_tab,  # noqa
-                                cargo_valor_tab, funcao_valor_tab,  # noqa
-                                value, month])  # noqa
             section = section_tab.string.strip()
         elif net_income_tab is not None:
-            nome_valor_tab = row.find(class_='nome_valor').getText().strip()  # noqa
-            cargo_valor_tab = row.find(class_='cargo_valor').getText().strip()  # noqa
-            funcao_valor_tab = row.find(class_='funcao_valor').getText().strip()  # noqa
-            value = get_income(net_income_tab)  # noqa
+            nome_valor_tab = row.find(class_='nome_valor').getText().strip()
+            cargo_valor_tab = row.find(class_='cargo_valor').getText().strip()
+            funcao_valor_tab = row.find(class_='funcao_valor').getText().strip()
+            value = get_income(net_income_tab)
+            if section is not None:
+                results.append([section, nome_valor_tab,
+                                cargo_valor_tab, funcao_valor_tab,
+                                value, month])
 
     return results
 
@@ -67,6 +70,7 @@ def write_to_csv(data):
 
 
 def main():
+    open('outputs/structured_data.csv', 'w').close()
     for month in range(1, 13):
         soup = read_html_for_month(month)
         data = get_structured_data_from_soup(soup, month)
