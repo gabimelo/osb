@@ -1,15 +1,4 @@
-from bs4 import BeautifulSoup
-
-
-def read_html_for_month(month):
-    month = str(month)
-    if len(month) == 1:
-        month = '0' + month
-    URL = 'inputs/SalariosAbertos2017/HTML/HTML_ativos_2017_{}/todos.html'.format(month)
-    with open(URL) as fp:
-        soup = BeautifulSoup(fp, "lxml")
-
-    return soup
+from html_parser import read_html_for_month
 
 
 def get_values_from_soup(soup):
